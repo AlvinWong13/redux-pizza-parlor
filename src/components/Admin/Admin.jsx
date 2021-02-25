@@ -1,6 +1,6 @@
 function Admin() {
   return(
-
+    console.log('in admin')
   )
 }
 
