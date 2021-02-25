@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import {useEffect, useSelector} from 'react';
+import {useEffect, useState} from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 import Home from '../Home/Home';
