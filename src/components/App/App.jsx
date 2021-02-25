@@ -23,7 +23,7 @@ function App() {
       url: '/api/pizza'
     }).then(res => {
       console.log('get pizza response: ', res);
-      dispatchEvent({
+      dispatch({
         type:'SET_PIZZA_LIST',
         payload: response.data
       })
