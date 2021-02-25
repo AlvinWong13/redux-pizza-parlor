@@ -15,10 +15,6 @@ import PizzaSelector from '../PizzaSelector/PizzaSelector';
 function App() {
   const dispatch = useDispatch();
 
-
-  const pizzaList = useSelector(store => store.pizzaList);
-
-
   useEffect (() => {
     console.log("use effected activated");
     getData();
