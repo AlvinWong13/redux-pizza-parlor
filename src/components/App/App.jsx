@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
@@ -13,7 +13,8 @@ import PizzaSelector from '../PizzaSelector/PizzaSelector';
 
 function App() {
 
-  const pizzaList = useState(store => store.pizzaReducer);
+
+  const pizzaList = useSelector(store => store.pizzaList);
 
 
   useEffect (() => {
@@ -39,8 +40,9 @@ function App() {
       <Route path="/" exact>
         <Home />
       </Route>
+      
+        <PizzaSelector pizzaList={pizzaList} />
 
-      <PizzaSelector pizzaList={pizzaList} />
     </Router>
   );
 }
