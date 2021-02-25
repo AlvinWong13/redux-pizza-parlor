@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 
-import {useEffect, useState} from 'react';
+
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
@@ -12,6 +13,7 @@ import PizzaSelector from '../PizzaSelector/PizzaSelector';
 // import Admin from '../Admin/Admin';
 
 function App() {
+  const dispatch = useDispatch();
 
 
   const pizzaList = useSelector(store => store.pizzaList);
@@ -40,8 +42,10 @@ function App() {
       <Route path="/" exact>
         <Home />
       </Route>
-      
-        <PizzaSelector pizzaList={pizzaList} />
+
+      <Route path="/select">
+        <PizzaSelector getData={getData} />
+      </Route>
 
     </Router>
   );
