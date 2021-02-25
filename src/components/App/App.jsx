@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import {useEffect, useState} from 'react';
+
+import {useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 import Home from '../Home/Home';
@@ -25,6 +27,10 @@ function App() {
       url: '/api/pizza'
     }).then(res => {
       console.log('get pizza response: ', res);
+      dispatch({
+        type:'SET_PIZZA_LIST',
+        payload: response.data
+      })
     }).catch(err => console.log(err));
   } // end getData
 
