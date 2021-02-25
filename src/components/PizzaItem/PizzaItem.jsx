@@ -1,6 +1,11 @@
-function PizzaItem() {
-  return(
 
+
+function PizzaItem({pizza}) {
+
+  return(
+    <li>
+      {pizza.name} 
+    </li>
   )
 }
 
