@@ -1,15 +1,18 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import {useEffect} from 'react';
+import {useEffect, useSelector} from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 import Home from '../Home/Home';
-// import PizzaSelector from '../PizzaSelector/PizzaSelector';
+import PizzaSelector from '../PizzaSelector/PizzaSelector';
 // import Checkout from '../Checkout/Checkout';
 // import Admin from '../Admin/Admin';
 
 function App() {
+
+  const pizzaList = useState(store => store.pizzaReducer);
+
 
   useEffect (() => {
     console.log("use effected activated");
@@ -30,6 +33,8 @@ function App() {
       <Route path="/" exact>
         <Home />
       </Route>
+
+      <PizzaSelector pizzaList={pizzaList} />
     </Router>
   );
 }
