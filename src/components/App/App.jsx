@@ -11,14 +11,12 @@ function App() {
   }, []) // end useEffect
 
   const getData = function () {
-
     axios({
       method: 'GET',
       url: '/api/pizza'
     }).then(res => {
       console.log('get pizza response: ', res);
     }).catch(err => console.log(err));
-
   } // end getData
 
   return (
