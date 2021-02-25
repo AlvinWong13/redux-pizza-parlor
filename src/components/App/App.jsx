@@ -32,7 +32,7 @@ function App() {
       console.log('get pizza response: ', res);
       dispatch({
         type:'SET_PIZZA_LIST',
-        payload: response.data
+        payload: res.data
       })
     }).catch(err => console.log(err));
   } // end getData
