@@ -9,8 +9,8 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 
 import Home from '../Home/Home';
 import PizzaSelector from '../PizzaSelector/PizzaSelector';
-// import Checkout from '../Checkout/Checkout';
-// import Admin from '../Admin/Admin';
+import Checkout from '../Checkout/Checkout';
+import Admin from '../Admin/Admin';
 
 function App() {
   const dispatch = useDispatch();
@@ -41,6 +41,14 @@ function App() {
 
       <Route path="/select">
         <PizzaSelector getData={getData} />
+      </Route>
+
+      <Route path="/checkout">
+        <Checkout getData={getData} />
+      </Route>
+
+      <Route path="/admin">
+        <Admin getData={getData} />
       </Route>
 
     </Router>

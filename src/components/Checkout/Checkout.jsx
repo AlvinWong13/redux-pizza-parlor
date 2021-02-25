@@ -1,5 +1,7 @@
 function Checkout() {
-  return()
+  return(
+    console.log('in checkout')
+  )
 
 }
 
