@@ -1,4 +1,4 @@
-
+import PizzaItem from '../PizzaItem/PizzaItem'
 
 function PizzaSelector({pizzaList}) {
 
@@ -6,9 +6,7 @@ function PizzaSelector({pizzaList}) {
     <ul>
       {pizzaList.map(pizza => {
         return (
-          <li>
-            {pizza.name}
-          </li>
+          <PizzaItem key={pizza.id} pizza={pizza}/>
         )
       })}
     </ul>
