@@ -8,7 +8,6 @@ function Header() {
   const cart = useSelector(store => store.checkout);
 
   const checkoutTotal = (checkout) => {
-    console.log('the checkout loops through: ', checkout);
     let sum = 0;
     for (const pizza of checkout) {
       sum += Number(pizza.price);
