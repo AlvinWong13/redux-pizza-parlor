@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 import Home from '../Home/Home';
+import Header from '../Header/Header';
 import PizzaSelector from '../PizzaSelector/PizzaSelector';
 import UserForm from '../UserForm/UserForm';
 import Checkout from '../Checkout/Checkout';
@@ -41,16 +42,21 @@ function App() {
         <Home />
       </Route>
       <Route path="/select">
+        <Header />
         <PizzaSelector getData={getData} />
       </Route>
       <Route path="/userinfo">
+        <Header />
         <UserForm />
       </Route>
+
       <Route path="/checkout">
+        <Header />
         <Checkout getData={getData} />
       </Route>
 
       <Route path="/admin">
+        <Header />
         <Admin getData={getData} />
       </Route>
     </Router>
