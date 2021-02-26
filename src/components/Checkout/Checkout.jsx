@@ -28,11 +28,9 @@ function Checkout() {
       <h2>Step 3: Checkout</h2>
         <div>
           <div id="customerInfo">
-            <customerInfo>
               <p><span>{userInfo.name}</span></p>
               <p><span>{userInfo.address}</span></p>
               <p>{userInfo.city}{userInfo.zip}</p>
-            </customerInfo>
           </div>
           <div>
             <span id="orderType">For Delivery</span>
