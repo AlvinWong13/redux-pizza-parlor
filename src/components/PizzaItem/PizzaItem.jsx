@@ -1,5 +1,6 @@
-import { useDispatch } from 'react-redux';
-import { useState, useSelector } from 'react';
+import {useDispatch} from 'react-redux';
+import {useState, useSelector} from 'react';
+import './PizzaItem.css';
 
 function PizzaItem({ pizza }) {
   const dispatch = useDispatch();
@@ -14,18 +15,17 @@ function PizzaItem({ pizza }) {
     });
   }; // end PlaceOrder
 
-  return (
-    <div>
-      <h2>{pizza.name}</h2>
-      {/* {setIndividPizza(pizza)} */}
+  return(
+    <div className="card">
       <img src={pizza.image_path} alt={pizza.name} />
-
-      <p>{pizza.price}</p>
-
-      <button value={pizza.price} id={pizza.id} onClick={placeOrder}>
-        {' '}
-        Order Me!
-      </button>
+      <div className="card-body">
+        <h4 className="card-title">{pizza.name}</h4> 
+        <p className="card-text">{pizza.description}</p>
+        <p id="price-text">${pizza.price}</p> 
+      </div>
+      <div className="card-footer">
+        <button value={pizza.price} id={pizza.id} onClick={placeOrder}> Order Me!</button>
+      </div>
     </div>
   );
 }
