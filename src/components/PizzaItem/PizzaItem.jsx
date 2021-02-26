@@ -2,19 +2,18 @@ import {useDispatch} from 'react-redux';
 import {useState, useSelector} from 'react';
 import './PizzaItem.css';
 
-function PizzaItem({pizza}) {
-
+function PizzaItem({ pizza }) {
   const dispatch = useDispatch();
 
   const placeOrder = function (e) {
-    console.log('place order', e.target.value);
-    
+    console.log('place order', e.target.id);
+    console.log('price', e.target.value);
+
     dispatch({
       type: 'ADD_PIZZA',
-      payload: e.target.value
+      payload: { id: e.target.id, price: e.target.value },
     });
-
-  } // end PlaceOrder
+  }; // end PlaceOrder
 
   return(
     <div className="card">
@@ -25,10 +24,10 @@ function PizzaItem({pizza}) {
         <p id="price-text">${pizza.price}</p> 
       </div>
       <div className="card-footer">
-        <button value={pizza.id} onClick={placeOrder}> Order Me!</button>
+        <button value={pizza.price} id={pizza.id} onClick={placeOrder}> Order Me!</button>
       </div>
     </div>
-  )
+  );
 }
 
 export default PizzaItem;
