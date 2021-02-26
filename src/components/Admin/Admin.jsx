@@ -36,9 +36,9 @@ function Admin() {
           </tr>
         </thead>
         <tbody>
-          {orderList.map((order) => {
+          {orderList.map((order, index) => {
             return (
-              <tr key={order.id}>
+              <tr key={index}>
                 <td>{order.customer_name}</td>
                 <td>{moment(order.time).format('l [at] LT')}</td>
                 <td>{order.type}</td>

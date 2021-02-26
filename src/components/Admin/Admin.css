@@ -13,3 +13,11 @@ table {
 thead {
   background-color: #b1b1b1;
 }
+
+tr {
+  height: 40px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(235, 235, 235);
+}
