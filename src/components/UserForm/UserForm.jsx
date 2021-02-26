@@ -12,15 +12,23 @@ function UserForm() {
   const [newZip, setNewZip] = useState('');
   const [newType, setNewType] = useState('');
 
+  const clearInputs = event =>{
+    setNewName('');
+    setNewAddress('');
+    setNewCity('');
+    setNewZip('');
+    setNewType(false);
+  }
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
     const customerInfo = {
-      name: { newName },
-      address: { newAddress },
-      city: { newCity },
-      zip: { newZip },
-      type: { newType },
+      name:  newName,
+      address: newAddress,
+      city: newCity,
+      zip: newZip,
+      type: newType,
     };
 
     dispatch({
@@ -29,6 +37,7 @@ function UserForm() {
     });
 
     history.push('/checkout');
+    clearInputs();
   };
   return (
     <div>

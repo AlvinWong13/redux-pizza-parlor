@@ -15,6 +15,12 @@ function PizzaItem({ pizza }) {
     });
   }; // end PlaceOrder
 
+  const [inCart, removeCart] = useState(false);
+
+  const toggleRemove = () => {
+    removeCart(!inCart);
+  }
+
   return(
     <div className="card">
       <img src={pizza.image_path} alt={pizza.name} />
@@ -24,7 +30,10 @@ function PizzaItem({ pizza }) {
         <p id="price-text">${pizza.price}</p> 
       </div>
       <div className="card-footer">
-        <button value={pizza.price} id={pizza.id} onClick={placeOrder}> Order Me!</button>
+        {/* <button value={pizza.price} id={pizza.id} onClick={placeOrder}> Order Me!</button> */}
+        <button onClick={() => { toggleRemove(); inCart? dispatch({type: 'REMOVE_PIZZA', payload: pizza}):
+        dispatch({type:'ADD_PIZZA', payload: pizza});
+        }}>{inCart ? <span>Remove</span>: <span>Add</span> }</button>
       </div>
     </div>
   );
