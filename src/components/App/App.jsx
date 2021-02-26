@@ -25,14 +25,13 @@ function App() {
   const getData = function () {
     axios({
       method: 'GET',
-
       url: '/api/pizza',
     })
       .then((res) => {
         console.log('get pizza response: ', res);
         dispatch({
           type: 'SET_PIZZA_LIST',
-          payload: response.data,
+          payload: res.data,
         });
       })
       .catch((err) => console.log(err));
@@ -49,8 +48,6 @@ function App() {
       <Route path="/userinfo">
         <UserForm />
       </Route>
-
-      <PizzaSelector pizzaList={pizzaList} />
     </Router>
   );
 }
