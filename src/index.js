@@ -18,22 +18,14 @@ const pizzaList = (state = [], action) => {
 };
 
 // reducer to track pizzas that are being purchased and price
-const checkout = (state = { totalPrice: 0, checkoutList: [] }, action) => {
+const checkout = (state = [], action) => {
   switch (action.type) {
     case 'ADD_PIZZA':
-      let totalPrice = state.totalPrice;
-      return {
-        totalPrice: (totalPrice += action.payload.price),
-        checkoutList: [...state.checkoutList, action.payload],
-      };
+      return [...state, action.payload];
     case 'REMOVE_PIZZA':
-      let newCheckout = state.checkoutList.filter(
-        (stat) => stat.id != action.payload.id
-      );
-      return {
-        totalPrice: state.totalPrice - action.payload.price,
-        checkoutList: newCheckout,
-      };
+      return state.filter(pizza => pizza.id != action.payload.id);
+    case 'CLEAR_CART':
+      return [];
     default:
       return state;
   }
@@ -49,25 +41,11 @@ const customerData = (state = {}, action) => {
   }
 };
 
-// reducer to add pizza in /pizzaItem
-const addPizza = (state = [], action) => {
-  switch (action.type) {
-    case 'ADD_PIZZA':
-      return [...state, { id: action.payload.id, quantity: 1 }];
-    case 'REMOVE_PIZZA':
-      let newList = state.filter((stat) => stat.id != action.payload.id);
-      return newList;
-    default:
-      return state;
-  }
-};
-
 const storeInstance = createStore(
   combineReducers({
     pizzaList,
     checkout,
     customerData,
-    addPizza,
   }),
   applyMiddleware(logger)
 );
