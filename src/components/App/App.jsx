@@ -8,14 +8,12 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 
 import Home from '../Home/Home';
 import PizzaSelector from '../PizzaSelector/PizzaSelector';
-// import Checkout from '../Checkout/Checkout';
-// import Admin from '../Admin/Admin';
 import UserForm from '../UserForm/UserForm';
+import Checkout from '../Checkout/Checkout';
+import Admin from '../Admin/Admin';
 
 function App() {
   const dispatch = useDispatch();
-
-  const pizzaList = useSelector((store) => store.pizzaList);
 
   useEffect(() => {
     console.log('use effected activated');
@@ -42,11 +40,19 @@ function App() {
       <Route path="/" exact>
         <Home />
       </Route>
+
       <Route path="/select">
         <PizzaSelector getData={getData} />
       </Route>
       <Route path="/userinfo">
         <UserForm />
+      </Route>
+      <Route path="/checkout">
+        <Checkout getData={getData} />
+      </Route>
+
+      <Route path="/admin">
+        <Admin getData={getData} />
       </Route>
     </Router>
   );

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { useDispatch, useHistory } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function UserForm() {
   const dispatch = useDispatch();
@@ -21,12 +22,13 @@ function UserForm() {
       zip: { newZip },
       type: { newType },
     };
-    console.log(customerInfo);
 
     dispatch({
       type: 'ADD_CURRENT_CUSTOMER',
       payload: customerInfo,
     });
+
+    history.push('/checkout');
   };
   return (
     <div>
