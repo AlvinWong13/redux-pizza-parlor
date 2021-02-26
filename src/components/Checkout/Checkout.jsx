@@ -33,7 +33,6 @@ function Checkout() {
       <h2>Step 3: Checkout</h2>
         <div>
           <div id="customerInfo">
-            {/* <customerInfo> */}
 
               <p>
                 <span>

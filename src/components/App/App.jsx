@@ -17,7 +17,6 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('use effected activated');
     getData();
   }, []); // end useEffect
 
@@ -27,7 +26,6 @@ function App() {
       url: '/api/pizza',
     })
       .then((res) => {
-        console.log('get pizza response: ', res);
         dispatch({
           type: 'SET_PIZZA_LIST',
           payload: res.data,

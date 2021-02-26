@@ -6,9 +6,6 @@ function PizzaItem({ pizza }) {
   const dispatch = useDispatch();
 
   const placeOrder = function (e) {
-    console.log('place order', e.target.id);
-    console.log('price', e.target.value);
-
     dispatch({
       type: 'ADD_PIZZA',
       payload: { id: e.target.id, price: e.target.value },
