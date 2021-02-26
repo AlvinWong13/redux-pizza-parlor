@@ -1,8 +1,5 @@
 function Checkout() {
-  return(
-    console.log('in checkout')
-  )
-
+  return <div>Checkout</div>;
 }
 
 export default Checkout;
