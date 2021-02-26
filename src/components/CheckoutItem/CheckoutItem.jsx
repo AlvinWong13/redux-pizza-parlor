@@ -2,7 +2,6 @@ import {useSelector} from 'react-redux';
 
 function CheckoutItem({ pizza }) {
   const pizzaList = useSelector(store => store.pizzaList);
-
   const pizzaID = Number(pizza.id);
 
   const orderedPizza = pizzaList.filter(pie => 

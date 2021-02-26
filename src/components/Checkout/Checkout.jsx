@@ -34,8 +34,6 @@ function Checkout() {
         <div>
           <div id="customerInfo">
 
-            {/* <customerInfo> */}
-
               <p>
                 <span>
                   {userInfo.name}
