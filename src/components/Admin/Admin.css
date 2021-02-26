@@ -1,0 +1,23 @@
+table,
+th,
+td {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+table {
+  width: 50%;
+  margin: 10px auto;
+}
+
+thead {
+  background-color: #b1b1b1;
+}
+
+tr {
+  height: 40px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(235, 235, 235);
+}

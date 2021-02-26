@@ -41,7 +41,6 @@ function App() {
       <Route path="/" exact>
         <Home />
       </Route>
-
       <Route path="/select">
         <Header />
         <PizzaSelector getData={getData} />
