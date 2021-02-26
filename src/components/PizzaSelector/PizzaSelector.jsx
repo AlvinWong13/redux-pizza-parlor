@@ -8,13 +8,13 @@ function PizzaSelector() {
   const pizzaList = useSelector(store => store.pizzaList);
 
   return(
-    <ul>
+    <div>
       {pizzaList.map(pizza => {
         return (
           <PizzaItem key={pizza.id} pizza={pizza}/>
         )
       })}
-    </ul>
+    </div>
   )
 }
 
