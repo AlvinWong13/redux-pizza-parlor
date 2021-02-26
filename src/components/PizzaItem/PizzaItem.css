@@ -1,0 +1,35 @@
+.card-text{
+  font-size:14px;
+  text-overflow: ellipsis;
+  overflow: visible;
+  text-align: left;
+  
+}
+.card {
+  background-color:rgb(224, 243, 255);
+}
+#price-text{
+text-align: center;
+position: absolute;
+font-size: 1.2em;
+}
+
+.card {
+  margin: 10px;
+}
+
+.card-title {
+  font-weight: bold;
+  text-align: left;
+}
+.card-body{
+  text-align: center;
+  vertical-align: middle;
+  min-height: 226px;
+}
+.card-footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
