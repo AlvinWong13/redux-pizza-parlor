@@ -7,11 +7,10 @@ function PizzaItem({ pizza }) {
   const placeOrder = function (e) {
     console.log('place order', e.target.id);
     console.log('price', e.target.value);
-    
+
     dispatch({
       type: 'ADD_PIZZA',
-      payload: {id: e.target.id,
-      price: e.target.value}
+      payload: { id: e.target.id, price: e.target.value },
     });
   }; // end PlaceOrder
 
@@ -21,13 +20,10 @@ function PizzaItem({ pizza }) {
       {/* {setIndividPizza(pizza)} */}
       <img src={pizza.image_path} alt={pizza.name} />
 
-      <p>
-        {pizza.price}
-      </p> 
+      <p>{pizza.price}</p>
 
-      <button value={pizza.price} id={pizza.id} onClick={placeOrder}> Order Me!</button>
-
-      <button value={pizza.id} onClick={placeOrder}>
+      <button value={pizza.price} id={pizza.id} onClick={placeOrder}>
+        {' '}
         Order Me!
       </button>
     </div>
